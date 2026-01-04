@@ -1,0 +1,19 @@
+/* ===================================
+   Resume Website - Animations
+   Scroll effects and transitions
+   =================================== */
+
+/* Fade-in animations - AOS.js will be configured in Phase 3 */
+
+/* Parallax effects - Will be implemented via JavaScript in Phase 3 */
+
+/* Sticky sections - Will be implemented in Phase 3 */
+
+/* Smooth scrolling - Already set in styles.css */
+
+/* Hover effects - Will be added in Phase 2 */
+
+/* Transition defaults */
+* {
+    transition-timing-function: var(--easing);
+}

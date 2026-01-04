@@ -1,0 +1,21 @@
+/* ===================================
+   Resume Website - Responsive Styles
+   Mobile-first approach
+   =================================== */
+
+/* Mobile styles (default - base styles in styles.css) */
+
+/* Tablet - 768px and up */
+@media (min-width: 768px) {
+    /* Tablet-specific styles will be added in Phase 2 */
+}
+
+/* Desktop - 1024px and up */
+@media (min-width: 1024px) {
+    /* Desktop-specific styles will be added in Phase 2 */
+}
+
+/* Large Desktop - 1440px and up */
+@media (min-width: 1440px) {
+    /* Large screen optimizations will be added in Phase 2 */
+}

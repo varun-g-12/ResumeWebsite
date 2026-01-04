@@ -1,0 +1,104 @@
+/* ===================================
+   Resume Website - Core Styles
+   Apple-inspired minimal design
+   =================================== */
+
+/* CSS Variables - Design System */
+:root {
+    /* Colors */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f5f5f7;
+    --text-primary: #1d1d1f;
+    --text-secondary: #6e6e73;
+    --accent-color: #0071e3;
+    --border-color: #d2d2d7;
+
+    /* Typography */
+    --font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-size-hero: 48px;
+    --font-size-h1: 40px;
+    --font-size-h2: 32px;
+    --font-size-h3: 24px;
+    --font-size-body: 16px;
+    --line-height: 1.6;
+
+    /* Spacing */
+    --max-width: 1200px;
+    --section-padding: 100px;
+    --element-margin: 40px;
+    --grid-gap: 40px;
+
+    /* Animation */
+    --easing: cubic-bezier(0.4, 0, 0.2, 1);
+    --duration: 0.6s;
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size-body);
+    line-height: var(--line-height);
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    overflow-x: hidden;
+}
+
+/* Section Styles - Will be implemented in Phase 2 */
+
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
+    /* Styles to be added */
+}
+
+/* About Section */
+.about-section {
+    padding: var(--section-padding) 0;
+    /* Styles to be added */
+}
+
+/* Experience Section */
+.experience-section {
+    padding: var(--section-padding) 0;
+    /* Styles to be added */
+}
+
+/* Projects Section */
+.projects-section {
+    padding: var(--section-padding) 0;
+    /* Styles to be added */
+}
+
+/* Skills Section */
+.skills-section {
+    padding: var(--section-padding) 0;
+    /* Styles to be added */
+}
+
+/* Awards Section */
+.awards-section {
+    padding: var(--section-padding) 0;
+    /* Styles to be added */
+}
+
+/* Education Section */
+.education-section {
+    padding: var(--section-padding) 0;
+    /* Styles to be added */
+}
+
+/* Contact/Footer Section */
+.contact-section {
+    padding: var(--section-padding) 0;
+    /* Styles to be added */
+}
