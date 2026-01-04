@@ -13,6 +13,7 @@
 - No period at end of subject
 - Keep subject under 50 characters
 - Explain **what** and **why**, not how
+- Do not include "Generated with Claude Code" or similar attribution
 
 ## Common Types
 - `feat:` - New feature
