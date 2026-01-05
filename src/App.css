@@ -425,7 +425,18 @@ section h3 {
   box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
 }
 
-/* Skills grid */
+/* Skills section with glassmorphism */
+.skills h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+}
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -433,24 +444,51 @@ section h3 {
 }
 
 .skill-group {
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 8px;
-  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.15);
+  transition: all 0.3s ease;
+}
+
+.skill-group:hover {
+  transform: translateY(-4px);
+  border-color: rgba(102, 126, 234, 0.4);
+  box-shadow: 0 8px 24px 0 rgba(102, 126, 234, 0.2);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.skill-group h3 {
+  font-size: 1.1rem;
+  color: #a8b5ff;
+  margin-bottom: 1rem;
+  font-weight: 600;
 }
 
 .skill-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-top: 0.5rem;
 }
 
 .skill-tag {
   background: rgba(102, 126, 234, 0.2);
-  color: #646cff;
-  padding: 0.25rem 0.75rem;
+  color: #a8b5ff;
+  padding: 0.375rem 0.875rem;
   border-radius: 12px;
   font-size: 0.85rem;
+  border: 1px solid rgba(102, 126, 234, 0.3);
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.skill-tag:hover {
+  background: rgba(102, 126, 234, 0.35);
+  color: #fff;
+  transform: translateY(-2px);
 }
 
 /* Experience section - EMPHASIZED with glassmorphism */
@@ -598,7 +636,170 @@ section h3 {
   transform: translateX(4px);
 }
 
-/* Languages */
+/* Education section with glassmorphism */
+.education h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+}
+
+.education-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.education-item {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.15);
+  transition: all 0.3s ease;
+}
+
+.education-item:hover {
+  transform: translateY(-4px);
+  border-color: rgba(102, 126, 234, 0.4);
+  box-shadow: 0 8px 24px 0 rgba(102, 126, 234, 0.2);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.education-item h3 {
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.education-item .institution {
+  color: #a8b5ff;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.education-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.education-meta .date {
+  color: #e9a8ff;
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+  background: rgba(118, 75, 162, 0.15);
+  border-radius: 8px;
+  border: 1px solid rgba(118, 75, 162, 0.3);
+}
+
+.education-meta .score {
+  color: #a8b5ff;
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+  background: rgba(102, 126, 234, 0.15);
+  border-radius: 8px;
+  border: 1px solid rgba(102, 126, 234, 0.3);
+}
+
+/* Awards section with glassmorphism */
+.awards h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+}
+
+.awards-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.award-item {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.15);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.award-item::before {
+  content: '🏆';
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  opacity: 0.2;
+  transition: all 0.3s ease;
+}
+
+.award-item:hover {
+  transform: translateY(-4px);
+  border-color: rgba(102, 126, 234, 0.4);
+  box-shadow: 0 8px 24px 0 rgba(102, 126, 234, 0.2);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.award-item:hover::before {
+  opacity: 0.4;
+  transform: scale(1.2);
+}
+
+.award-item h3 {
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  padding-right: 2.5rem;
+}
+
+.award-item .awarder {
+  color: #a8b5ff;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.award-item .award-date {
+  color: #e9a8ff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+  background: rgba(118, 75, 162, 0.15);
+  border-radius: 8px;
+  border: 1px solid rgba(118, 75, 162, 0.3);
+  display: inline-block;
+}
+
+/* Languages section with glassmorphism */
+.languages h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+}
+
 .languages-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -609,28 +810,48 @@ section h3 {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.15);
+  transition: all 0.3s ease;
+}
+
+.language-item:hover {
+  transform: translateY(-4px);
+  border-color: rgba(102, 126, 234, 0.4);
+  box-shadow: 0 8px 24px 0 rgba(102, 126, 234, 0.2);
+  background: rgba(255, 255, 255, 0.07);
 }
 
 .language-name {
-  font-weight: 500;
+  font-weight: 600;
+  color: #fff;
+  font-size: 1rem;
 }
 
 .language-level {
   font-size: 0.85rem;
-  color: #888;
+  color: #a8b5ff;
+  font-weight: 500;
 }
 
 .language-bar {
-  height: 6px;
+  height: 8px;
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 3px;
+  border-radius: 4px;
   overflow: hidden;
+  margin-top: 0.25rem;
 }
 
 .language-bar-fill {
   height: 100%;
   background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-  transition: width 0.3s;
+  transition: width 0.6s ease;
+  box-shadow: 0 0 8px rgba(102, 126, 234, 0.5);
 }
 
 @media (max-width: 768px) {
@@ -715,5 +936,25 @@ section h3 {
 
   .highlights li {
     font-size: 0.9rem;
+  }
+
+  /* Supporting sections mobile adjustments */
+  .skills h2,
+  .education h2,
+  .awards h2,
+  .languages h2 {
+    font-size: 1.75rem;
+  }
+
+  .skill-group,
+  .education-item,
+  .award-item,
+  .language-item {
+    padding: 1.25rem;
+  }
+
+  .education-list,
+  .awards-list {
+    grid-template-columns: 1fr;
   }
 }
