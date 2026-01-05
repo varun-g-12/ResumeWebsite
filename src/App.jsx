@@ -1,47 +1,32 @@
 import './App.css'
+import Hero from './components/Hero'
+import About from './components/About'
+import Experience from './components/Experience'
+import Projects from './components/Projects'
+import Skills from './components/Skills'
+import Education from './components/Education'
+import Awards from './components/Awards'
+import Languages from './components/Languages'
 
 function App() {
   return (
     <div className="app">
-      <header className="header">
-        <h1>Varun G</h1>
-        <p className="subtitle">GenAI Developer</p>
-      </header>
+      {/* Phase 2: Testing data integration */}
+      <div className="phase-banner">
+        <p>Phase 2: Data Integration Testing - All components now load data from resume.js</p>
+      </div>
+
+      <Hero />
 
       <main className="main">
-        <section className="intro">
-          <h2>Welcome</h2>
-          <p>
-            Deployment test successful! This is a work-in-progress resume website.
-          </p>
-          <p>
-            This site is automatically deployed via GitHub Actions to GitHub Pages.
-          </p>
-        </section>
-
-        <section className="status">
-          <h3>Phase 1: Complete</h3>
-          <ul>
-            <li>✅ Vite + React project initialized</li>
-            <li>✅ GitHub Pages configuration ready</li>
-            <li>✅ Basic structure implemented</li>
-            <li>🚀 Deployment pipeline operational</li>
-          </ul>
-        </section>
+        <About />
+        <Experience />
+        <Projects />
+        <Skills />
+        <Education />
+        <Awards />
+        <Languages />
       </main>
-
-      <footer className="footer">
-        <p>Bengaluru, India</p>
-        <p>
-          <a href="https://www.linkedin.com/in/varun-g-1b6757343" target="_blank" rel="noopener noreferrer">
-            LinkedIn
-          </a>
-          {' | '}
-          <a href="https://medium.com/@varungangu1" target="_blank" rel="noopener noreferrer">
-            Medium
-          </a>
-        </p>
-      </footer>
     </div>
   )
 }

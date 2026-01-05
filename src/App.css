@@ -7,6 +7,21 @@
   flex-direction: column;
 }
 
+.phase-banner {
+  background: rgba(102, 126, 234, 0.2);
+  border: 1px solid #646cff;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.phase-banner p {
+  margin: 0;
+  color: #646cff;
+  font-weight: 500;
+}
+
 .header {
   text-align: center;
   padding: 3rem 0;
@@ -81,20 +96,260 @@
   text-decoration: underline;
 }
 
+/* Component Styles - Basic styling for Phase 2 testing */
+section {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+section h2 {
+  color: #646cff;
+  margin-bottom: 1.5rem;
+}
+
+section h3 {
+  color: #888;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Hero section */
+.hero {
+  text-align: center;
+}
+
+.hero-avatar {
+  margin-bottom: 1rem;
+}
+
+.avatar-placeholder {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.headline {
+  font-size: 1.5rem;
+  color: #888;
+  margin-bottom: 1.5rem;
+}
+
+.hero-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.hero-links a {
+  color: #646cff;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border: 1px solid #646cff;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+
+.hero-links a:hover {
+  background: #646cff;
+  color: white;
+}
+
+.location {
+  color: #888;
+}
+
+/* Projects grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-description {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.project-date {
+  color: #646cff;
+  font-size: 0.85rem;
+  margin: 0.5rem 0;
+}
+
+.project-summary {
+  line-height: 1.6;
+  margin: 1rem 0;
+}
+
+.project-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.keyword-tag {
+  background: rgba(102, 126, 234, 0.2);
+  color: #646cff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+}
+
+/* Skills grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-group {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.skill-tag {
+  background: rgba(102, 126, 234, 0.2);
+  color: #646cff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+}
+
+/* Experience list */
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.experience-item {
+  border-left: 2px solid #646cff;
+  padding-left: 1.5rem;
+}
+
+.experience-meta {
+  display: flex;
+  gap: 1rem;
+  color: #888;
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+}
+
+.highlights {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+}
+
+.highlights li {
+  padding: 0.25rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.highlights li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: #646cff;
+}
+
+/* Languages */
+.languages-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.language-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.language-name {
+  font-weight: 500;
+}
+
+.language-level {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.language-bar {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.language-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  transition: width 0.3s;
+}
+
 @media (max-width: 768px) {
   .app {
     padding: 1rem;
   }
 
-  .header h1 {
+  .header h1, .hero h1 {
     font-size: 2rem;
   }
 
-  .subtitle {
+  .subtitle, .headline {
     font-size: 1.2rem;
   }
 
-  .intro, .status {
+  .intro, .status, section {
     padding: 1.5rem;
+  }
+
+  .hero-links {
+    flex-direction: column;
+  }
+
+  .projects-grid,
+  .skills-grid,
+  .languages-list {
+    grid-template-columns: 1fr;
   }
 }
