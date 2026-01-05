@@ -1,3 +1,8 @@
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
 .app {
   max-width: 1200px;
   margin: 0 auto;
@@ -8,17 +13,20 @@
 }
 
 .phase-banner {
-  background: rgba(102, 126, 234, 0.2);
-  border: 1px solid #646cff;
-  border-radius: 8px;
+  background: rgba(102, 126, 234, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(102, 126, 234, 0.3);
+  border-radius: 12px;
   padding: 1rem;
   margin-bottom: 2rem;
   text-align: center;
+  box-shadow: 0 4px 16px 0 rgba(102, 126, 234, 0.1);
 }
 
 .phase-banner p {
   margin: 0;
-  color: #646cff;
+  color: #a8b5ff;
   font-weight: 500;
 }
 
@@ -284,6 +292,43 @@ section h3 {
 .location::before {
   content: '📍';
   font-size: 1.2rem;
+}
+
+/* About section with glassmorphism */
+.about {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+  transition: all 0.3s ease;
+}
+
+.about:hover {
+  box-shadow: 0 12px 40px 0 rgba(102, 126, 234, 0.15);
+  border-color: rgba(102, 126, 234, 0.3);
+}
+
+.about h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+}
+
+.about p {
+  color: #ccc;
+  line-height: 1.8;
+  font-size: 1.05rem;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 /* Projects section - Emphasized with glassmorphism */
@@ -854,6 +899,26 @@ section h3 {
   box-shadow: 0 0 8px rgba(102, 126, 234, 0.5);
 }
 
+/* Tablet breakpoint (768px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .app {
+    padding: 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+
+/* Mobile breakpoint (max-width: 768px) */
 @media (max-width: 768px) {
   .app {
     padding: 1rem;
@@ -869,6 +934,20 @@ section h3 {
 
   .intro, .status, section {
     padding: 1.5rem;
+  }
+
+  /* About section mobile */
+  .about {
+    padding: 1.5rem;
+  }
+
+  .about h2 {
+    font-size: 1.75rem;
+  }
+
+  .about p {
+    font-size: 1rem;
+    text-align: left;
   }
 
   .hero-content {
