@@ -76,8 +76,8 @@ const resumeData = {
     {
       "name": "MiNE MCP",
       "description": "MCP setup for MiNE (exploration)",
-      "date": "Aug-2025 - Present",
-      "summary": "Takenup the MCP server setup for MiNE project as exploration/POC task.",
+      "date": "Aug 2025 - Present",
+      "summary": "Took on the MCP server setup for MiNE project as an exploration/POC task.",
       "keywords": ["MCP", "LLM Agents", "AWS"]
     },
     {

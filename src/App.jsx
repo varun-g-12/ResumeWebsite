@@ -11,11 +11,6 @@ import Languages from './components/Languages'
 function App() {
   return (
     <div className="app">
-      {/* Phase 2: Testing data integration */}
-      <div className="phase-banner">
-        <p>Phase 2: Data Integration Testing - All components now load data from resume.js</p>
-      </div>
-
       <Hero />
 
       <main className="main">
