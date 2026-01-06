@@ -9,10 +9,14 @@ import EducationAwards from './components/EducationAwards'
 import Languages from './components/Languages'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import PageLoader from './components/PageLoader'
+import ScrollProgress from './components/ScrollProgress'
 
 function App() {
   return (
     <>
+      <PageLoader />
+      <ScrollProgress />
       <Navbar />
       <div className="app">
         <div className="navbar-spacer" />

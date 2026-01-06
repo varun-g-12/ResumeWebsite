@@ -3820,3 +3820,305 @@
     order: 1;
   }
 }
+
+/* ==========================================================================
+   PHASE 11: FINAL POLISH & ANIMATIONS
+   ========================================================================== */
+
+/* ==========================================================================
+   PAGE LOADER
+   ========================================================================== */
+
+.page-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--deep-space);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.page-loader__content {
+  text-align: center;
+}
+
+.page-loader__logo {
+  margin-bottom: var(--space-8);
+}
+
+.page-loader__name {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--electric-cyan), var(--ai-green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.page-loader__bar-container {
+  width: 200px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin: 0 auto var(--space-4);
+}
+
+.page-loader__bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--electric-cyan), var(--ai-green));
+  border-radius: var(--radius-full);
+}
+
+.page-loader__text {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  margin: 0;
+  letter-spacing: 0.1em;
+}
+
+/* ==========================================================================
+   SCROLL PROGRESS INDICATOR
+   ========================================================================== */
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--electric-cyan), var(--ai-green), var(--neural-purple));
+  transform-origin: 0%;
+  z-index: 10001;
+  transition: opacity 0.3s ease;
+}
+
+/* ==========================================================================
+   GLOBAL POLISH
+   ========================================================================== */
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom selection colors */
+::selection {
+  background: rgba(0, 212, 255, 0.3);
+  color: var(--text-primary);
+}
+
+::-moz-selection {
+  background: rgba(0, 212, 255, 0.3);
+  color: var(--text-primary);
+}
+
+/* Focus visible styles for accessibility */
+:focus-visible {
+  outline: 2px solid var(--electric-cyan);
+  outline-offset: 2px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--deep-space);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--electric-cyan), var(--neural-purple));
+  border-radius: var(--radius-full);
+  border: 2px solid var(--deep-space);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--ai-green), var(--electric-cyan));
+}
+
+/* ==========================================================================
+   ENHANCED LINK ANIMATIONS
+   ========================================================================== */
+
+/* Underline animation for text links */
+.animated-link {
+  position: relative;
+  text-decoration: none;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+.animated-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--electric-cyan), var(--ai-green));
+  transition: width 0.3s ease;
+}
+
+.animated-link:hover {
+  color: var(--electric-cyan);
+}
+
+.animated-link:hover::after {
+  width: 100%;
+}
+
+/* ==========================================================================
+   ADDITIONAL KEYFRAME ANIMATIONS
+   ========================================================================== */
+
+/* Pulse glow animation */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 212, 255, 0.6);
+  }
+}
+
+/* Float animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Gradient shift animation */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Shimmer animation for loading states */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Scale pulse animation */
+@keyframes scalePulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* ==========================================================================
+   UTILITY CLASSES FOR ANIMATIONS
+   ========================================================================== */
+
+.animate-pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Stagger delay utilities */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+
+/* ==========================================================================
+   PERFORMANCE OPTIMIZATIONS
+   ========================================================================== */
+
+/* GPU acceleration for animated elements */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .page-loader {
+    display: none;
+  }
+
+  .scroll-progress {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   FINAL TOUCHES
+   ========================================================================== */
+
+/* Ensure smooth transitions globally */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Prevent content shift during page load */
+body {
+  overflow-x: hidden;
+}
+
+/* Image optimization */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Better tap targets for mobile */
+@media (max-width: 768px) {
+  button,
+  a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
