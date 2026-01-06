@@ -1,28 +1,39 @@
 import './App.css'
+import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
 import Experience from './components/Experience'
 import Projects from './components/Projects'
 import Skills from './components/Skills'
-import Education from './components/Education'
-import Awards from './components/Awards'
+import EducationAwards from './components/EducationAwards'
 import Languages from './components/Languages'
+import Contact from './components/Contact'
+import Footer from './components/Footer'
+import PageLoader from './components/PageLoader'
+import ScrollProgress from './components/ScrollProgress'
 
 function App() {
   return (
-    <div className="app">
-      <Hero />
+    <>
+      <PageLoader />
+      <ScrollProgress />
+      <Navbar />
+      <div className="app">
+        <div className="navbar-spacer" />
+        <Hero />
 
-      <main className="main">
-        <About />
-        <Experience />
-        <Projects />
-        <Skills />
-        <Education />
-        <Awards />
-        <Languages />
-      </main>
-    </div>
+        <main className="main">
+          <About />
+          <Experience />
+          <Projects />
+          <Skills />
+          <EducationAwards />
+          <Languages />
+          <Contact />
+        </main>
+      </div>
+      <Footer />
+    </>
   )
 }
 
