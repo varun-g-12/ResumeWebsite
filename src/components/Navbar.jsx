@@ -113,7 +113,7 @@ function Navbar() {
           {/* CTA Button */}
           <a
             href="/resume.pdf"
-            download
+            download="Varun-G-Resume.pdf"
             className="navbar__cta"
             target="_blank"
             rel="noopener noreferrer"
