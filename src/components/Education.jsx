@@ -2,7 +2,7 @@ import { education } from '../data/resume';
 
 function Education() {
   return (
-    <section className="education">
+    <section id="education" className="education">
       <h2>Education</h2>
       <div className="education-list">
         {education.map((edu, index) => (

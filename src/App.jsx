@@ -1,4 +1,5 @@
 import './App.css'
+import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
 import Experience from './components/Experience'
@@ -10,19 +11,23 @@ import Languages from './components/Languages'
 
 function App() {
   return (
-    <div className="app">
-      <Hero />
+    <>
+      <Navbar />
+      <div className="app">
+        <div className="navbar-spacer" />
+        <Hero />
 
-      <main className="main">
-        <About />
-        <Experience />
-        <Projects />
-        <Skills />
-        <Education />
-        <Awards />
-        <Languages />
-      </main>
-    </div>
+        <main className="main">
+          <About />
+          <Experience />
+          <Projects />
+          <Skills />
+          <Education />
+          <Awards />
+          <Languages />
+        </main>
+      </div>
+    </>
   )
 }
 
