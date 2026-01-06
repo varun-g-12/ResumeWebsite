@@ -119,7 +119,7 @@ function Hero() {
             </button>
             <a
               href="/resume.pdf"
-              download
+              download="Varun-G-Resume.pdf"
               className="hero__cta hero__cta--secondary"
             >
               <HiDownload />
