@@ -7,6 +7,7 @@ import Projects from './components/Projects'
 import Skills from './components/Skills'
 import EducationAwards from './components/EducationAwards'
 import Languages from './components/Languages'
+import Contact from './components/Contact'
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Skills />
           <EducationAwards />
           <Languages />
+          <Contact />
         </main>
       </div>
     </>
