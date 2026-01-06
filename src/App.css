@@ -2786,3 +2786,433 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================================================
+   PHASE 8: EDUCATION & AWARDS SECTION
+   ========================================================================== */
+
+.education-awards-section {
+  padding: var(--space-20) 0;
+  background: linear-gradient(180deg, var(--deep-space) 0%, var(--space-gray) 50%, var(--deep-space) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.education-awards-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(ellipse at 20% 20%, rgba(0, 212, 255, 0.03) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(123, 97, 255, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.education-awards__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+  position: relative;
+  z-index: 1;
+}
+
+/* Section Header */
+.education-awards__header {
+  text-align: center;
+  margin-bottom: var(--space-16);
+}
+
+.education-awards__label {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--electric-cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: var(--space-4);
+  padding: var(--space-2) var(--space-4);
+  background: rgba(0, 212, 255, 0.1);
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.education-awards__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.education-awards__title-highlight {
+  background: linear-gradient(135deg, var(--electric-cyan), var(--neural-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Subsection Styling */
+.education-awards__subsection {
+  margin-bottom: var(--space-12);
+}
+
+.education-awards__subsection:last-child {
+  margin-bottom: 0;
+}
+
+.education-awards__subsection-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--ai-green);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: var(--space-8);
+}
+
+.education-awards__sparkle {
+  color: var(--ai-green);
+  font-size: var(--text-base);
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+/* Grid Layout */
+.education-awards__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+}
+
+/* ==========================================================================
+   EDUCATION CARD
+   ========================================================================== */
+
+.education-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.education-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.education-card:hover {
+  border-color: rgba(0, 212, 255, 0.3);
+  box-shadow:
+    0 0 30px rgba(0, 212, 255, 0.1),
+    0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.education-card:hover::before {
+  opacity: 1;
+}
+
+.education-card__icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(0, 212, 255, 0.05));
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-6);
+  transition: all 0.3s ease;
+}
+
+.education-card__icon svg {
+  font-size: 28px;
+  color: var(--electric-cyan);
+}
+
+.education-card:hover .education-card__icon {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.3), rgba(0, 212, 255, 0.1));
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+.education-card__content {
+  margin-bottom: var(--space-6);
+  position: relative;
+  z-index: 1;
+}
+
+.education-card__degree {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 var(--space-2) 0;
+  line-height: 1.3;
+}
+
+.education-card__institution {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Badges */
+.education-card__badges {
+  display: flex;
+  gap: var(--space-3);
+  position: relative;
+  z-index: 1;
+}
+
+.education-card__badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-3) var(--space-4);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.education-card__badge--cgpa {
+  background: linear-gradient(135deg, rgba(0, 255, 136, 0.15), rgba(0, 255, 136, 0.05));
+  border-color: rgba(0, 255, 136, 0.2);
+}
+
+.education-card:hover .education-card__badge--cgpa {
+  border-color: rgba(0, 255, 136, 0.4);
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
+}
+
+.education-card__badge--date {
+  background: rgba(123, 97, 255, 0.1);
+  border-color: rgba(123, 97, 255, 0.2);
+}
+
+.education-card:hover .education-card__badge--date {
+  border-color: rgba(123, 97, 255, 0.4);
+}
+
+.education-card__badge-value {
+  font-family: var(--font-mono);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.education-card__badge--cgpa .education-card__badge-value {
+  color: var(--ai-green);
+}
+
+.education-card__badge-label {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 2px;
+}
+
+/* Glow Line */
+.education-card__glow-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--electric-cyan), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.education-card:hover .education-card__glow-line {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   AWARD CARD
+   ========================================================================== */
+
+.award-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.award-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.05) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.award-card:hover {
+  border-color: rgba(255, 215, 0, 0.3);
+  box-shadow:
+    0 0 30px rgba(255, 215, 0, 0.1),
+    0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.award-card:hover::before {
+  opacity: 1;
+}
+
+.award-card__icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0.05));
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-6);
+  transition: all 0.3s ease;
+}
+
+.award-card__icon svg {
+  font-size: 28px;
+  color: #FFD700;
+}
+
+.award-card:hover .award-card__icon {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(255, 215, 0, 0.1));
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.award-card__content {
+  position: relative;
+  z-index: 1;
+}
+
+.award-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 var(--space-4) 0;
+  line-height: 1.3;
+}
+
+.award-card__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.award-card__awarder {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: #FFD700;
+  padding: var(--space-1) var(--space-3);
+  background: rgba(255, 215, 0, 0.1);
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.award-card__awarder svg {
+  font-size: 12px;
+}
+
+.award-card__date {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+/* Glow Line */
+.award-card__glow-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #FFD700, transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.award-card:hover .award-card__glow-line {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   EDUCATION & AWARDS RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .education-awards-section {
+    padding: var(--space-16) 0;
+  }
+
+  .education-awards__header {
+    margin-bottom: var(--space-12);
+  }
+
+  .education-awards__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .education-card,
+  .award-card {
+    padding: var(--space-6);
+  }
+
+  .education-card__icon,
+  .award-card__icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: var(--space-4);
+  }
+
+  .education-card__icon svg,
+  .award-card__icon svg {
+    font-size: 24px;
+  }
+
+  .education-card__degree,
+  .award-card__title {
+    font-size: var(--text-lg);
+  }
+
+  .education-card__badges {
+    flex-wrap: wrap;
+  }
+
+  .education-card__badge {
+    padding: var(--space-2) var(--space-3);
+  }
+
+  .education-card__badge-value {
+    font-size: var(--text-base);
+  }
+}
