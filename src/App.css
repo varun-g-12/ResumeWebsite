@@ -1284,9 +1284,9 @@
   font-size: var(--text-xs);
 }
 
-/* Career Progression Bar */
+/* Career Progression Bar - Card Flow Design */
 .career-progression {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: var(--space-8) auto 0;
   padding: var(--space-8);
   background: var(--glass-bg);
@@ -1302,108 +1302,118 @@
   color: var(--color-text-muted);
   text-transform: uppercase;
   letter-spacing: var(--tracking-wider);
-  margin-bottom: var(--space-6);
+  margin-bottom: var(--space-8);
 }
 
-.career-progression__track {
+.career-progression__grid {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  gap: var(--space-4);
+  justify-content: center;
+  align-items: center;
+}
+
+.career-progression__card {
   position: relative;
-  height: 120px;
-  display: flex;
-  align-items: center;
-}
-
-.career-progression__line {
-  position: absolute;
-  left: 0;
-  right: 40px;
-  top: 50%;
-  height: 4px;
-  background: linear-gradient(
-    to right,
-    var(--color-accent-purple),
-    var(--color-accent-cyan),
-    var(--color-accent-green)
-  );
-  border-radius: var(--radius-full);
-  transform: translateY(-50%);
-}
-
-.career-progression__point {
-  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
-  transform: translateX(-50%);
+  justify-content: center;
+  min-width: 200px;
+  min-height: 140px;
+  padding: 24px;
+  background: var(--glass-bg);
+  border: 2px solid var(--color-accent-cyan);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-/* All labels positioned above the line for consistency */
-.career-progression__point:nth-child(2),
-.career-progression__point:nth-child(3),
-.career-progression__point:nth-child(4) {
-  flex-direction: column;
+.career-progression__card:hover {
+  box-shadow: 0 8px 32px rgba(0, 212, 255, 0.3);
 }
 
-.career-progression__dot {
-  width: 16px;
-  height: 16px;
-  background: var(--color-accent-cyan);
-  border-radius: 50%;
-  border: 3px solid var(--color-bg-primary);
-  box-shadow: var(--glow-cyan);
-  margin-bottom: var(--space-4);
+.career-progression__card:nth-child(1) {
+  border-color: var(--color-accent-purple);
 }
 
-.career-progression__point:first-child .career-progression__dot {
-  background: var(--color-accent-purple);
-  box-shadow: var(--glow-purple);
+.career-progression__card:nth-child(1):hover {
+  box-shadow: 0 8px 32px rgba(168, 85, 247, 0.3);
 }
 
-.career-progression__point:last-child .career-progression__dot {
-  background: var(--color-accent-green);
-  box-shadow: var(--glow-green);
+.career-progression__card:nth-child(1) .career-progression__year {
+  color: var(--color-accent-purple);
 }
 
-.career-progression__info {
-  text-align: center;
-  white-space: nowrap;
-  max-width: 140px;
+.career-progression__card:nth-child(3) {
+  border-color: var(--color-accent-cyan);
 }
 
-.career-progression__role {
-  display: block;
-  font-size: 11px;
-  font-weight: var(--font-semibold);
-  color: var(--color-text-secondary);
-  margin-bottom: var(--space-1);
-  white-space: normal;
-  line-height: 1.3;
+.career-progression__card:nth-child(3):hover {
+  box-shadow: 0 8px 32px rgba(0, 212, 255, 0.3);
+}
+
+.career-progression__card:nth-child(3) .career-progression__year {
+  color: var(--color-accent-cyan);
+}
+
+.career-progression__card:nth-child(5) {
+  border-color: var(--color-accent-green);
+}
+
+.career-progression__card:nth-child(5):hover {
+  box-shadow: 0 8px 32px rgba(16, 185, 129, 0.3);
+}
+
+.career-progression__card:nth-child(5) .career-progression__year {
+  color: var(--color-accent-green);
 }
 
 .career-progression__year {
-  display: block;
   font-family: var(--font-mono);
-  font-size: 10px;
-  color: var(--color-text-muted);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-accent-cyan);
+  margin-bottom: 12px;
+}
+
+.career-progression__role {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+  text-align: center;
 }
 
 .career-progression__arrow {
+  font-size: 32px;
+  color: var(--color-accent-cyan);
+  padding: 0 8px;
+  animation: arrowPulse 2s ease-in-out infinite;
+}
+
+.career-progression__badge {
   position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: var(--text-2xl);
-  color: var(--color-accent-green);
-  animation: arrowPulse 1.5s ease-in-out infinite;
+  bottom: 12px;
+  right: 12px;
+  padding: 4px 12px;
+  background: var(--color-accent-green);
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 @keyframes arrowPulse {
   0%, 100% {
     opacity: 1;
-    transform: translateY(-50%) translateX(0);
+    transform: translateX(0);
   }
   50% {
-    opacity: 0.5;
-    transform: translateY(-50%) translateX(5px);
+    opacity: 0.6;
+    transform: translateX(5px);
   }
 }
 
@@ -1431,6 +1441,30 @@
     right: auto;
     border-left-color: transparent;
     border-right-color: var(--color-border);
+  }
+
+  /* Career Progression - Tablet */
+  .career-progression__grid {
+    grid-template-columns: repeat(3, auto);
+    gap: var(--space-3);
+  }
+
+  .career-progression__card {
+    min-width: 180px;
+    min-height: 130px;
+    padding: 20px;
+  }
+
+  .career-progression__year {
+    font-size: 22px;
+  }
+
+  .career-progression__role {
+    font-size: 15px;
+  }
+
+  .career-progression__arrow {
+    font-size: 28px;
   }
 }
 
@@ -1482,16 +1516,28 @@
     padding: var(--space-6) var(--space-4);
   }
 
-  .career-progression__track {
-    height: 140px;
+  .career-progression__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
   }
 
-  .career-progression__role {
-    font-size: 10px;
+  .career-progression__card {
+    min-width: 100%;
+    min-height: 120px;
+    padding: 16px;
+  }
+
+  .career-progression__arrow {
+    transform: rotate(90deg);
+    font-size: 24px;
   }
 
   .career-progression__year {
-    font-size: 9px;
+    font-size: 20px;
+  }
+
+  .career-progression__role {
+    font-size: 14px;
   }
 }
 

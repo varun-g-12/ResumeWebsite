@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaBriefcase, FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { HiLocationMarker } from 'react-icons/hi';
@@ -153,23 +153,61 @@ function Experience() {
           transition={{ delay: 0.5 }}
         >
           <span className="career-progression__label">Career Progression</span>
-          <div className="career-progression__track">
-            <div className="career-progression__line" />
+          <motion.div
+            className="career-progression__grid"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.15
+                }
+              }
+            }}
+          >
             {progression.map((item, index) => (
-              <div
-                key={index}
-                className="career-progression__point"
-                style={{ left: `${(index / (progression.length - 1)) * 100}%` }}
-              >
-                <div className="career-progression__dot" />
-                <div className="career-progression__info">
-                  <span className="career-progression__role">{item.role}</span>
-                  <span className="career-progression__year">{item.year}</span>
-                </div>
-              </div>
+              <React.Fragment key={index}>
+                <motion.div
+                  className="career-progression__card"
+                  variants={{
+                    hidden: { opacity: 0, scale: 0.8 },
+                    visible: {
+                      opacity: 1,
+                      scale: 1,
+                      transition: {
+                        type: "spring",
+                        bounce: 0.4,
+                        duration: 0.6
+                      }
+                    }
+                  }}
+                  whileHover={{ scale: 1.05, y: -8 }}
+                >
+                  <div className="career-progression__year">{item.year}</div>
+                  <div className="career-progression__role">{item.role}</div>
+                  {index === progression.length - 1 && (
+                    <span className="career-progression__badge">Current</span>
+                  )}
+                </motion.div>
+                {index < progression.length - 1 && (
+                  <motion.div
+                    className="career-progression__arrow"
+                    variants={{
+                      hidden: { opacity: 0 },
+                      visible: {
+                        opacity: 1,
+                        transition: { delay: 0.3 }
+                      }
+                    }}
+                  >
+                    →
+                  </motion.div>
+                )}
+              </React.Fragment>
             ))}
-            <div className="career-progression__arrow">→</div>
-          </div>
+          </motion.div>
         </motion.div>
       </motion.div>
     </section>
