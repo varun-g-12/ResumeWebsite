@@ -128,7 +128,13 @@ function EducationAwards() {
         </motion.div>
 
         {/* Education Subsection */}
-        <motion.div className="education-awards__subsection" variants={headerVariants}>
+        <motion.div
+          className="education-awards__subsection"
+          variants={headerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-50px' }}
+        >
           <div className="education-awards__subsection-header">
             <HiSparkles className="education-awards__sparkle" />
             <span>Education</span>
@@ -142,7 +148,13 @@ function EducationAwards() {
         </motion.div>
 
         {/* Awards Subsection */}
-        <motion.div className="education-awards__subsection" variants={headerVariants}>
+        <motion.div
+          className="education-awards__subsection"
+          variants={headerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-50px' }}
+        >
           <div className="education-awards__subsection-header">
             <HiSparkles className="education-awards__sparkle" />
             <span>Awards & Achievements</span>

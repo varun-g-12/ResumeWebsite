@@ -19,6 +19,16 @@
   --color-accent-green: #00ff88;
   --color-accent-purple: #7b61ff;
 
+  /* Alias variables for consistency */
+  --electric-cyan: #00d4ff;
+  --ai-green: #00ff88;
+  --neural-purple: #7b61ff;
+  --deep-space: #0a0a0f;
+  --space-gray: #0d1b2a;
+  --text-primary: #ffffff;
+  --text-secondary: #e2e8f0;
+  --text-muted: #64748b;
+
   /* Text Colors */
   --color-text-primary: #ffffff;
   --color-text-secondary: #e2e8f0;
