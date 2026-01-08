@@ -40,14 +40,37 @@ function ProjectCard({ project, onClick, isFeatured = false }) {
   const CategoryIcon = categories.find(c => c.id === category)?.icon || FaCode;
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0 }
+    hidden: {
+      opacity: 0,
+      y: 30,
+      scale: 0.95
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.4,
+        ease: [0.25, 0.46, 0.45, 0.94]
+      }
+    },
+    exit: {
+      opacity: 0,
+      scale: 0.95,
+      transition: {
+        duration: 0.2
+      }
+    }
   };
 
   return (
     <motion.div
       className={`project-card-new ${isFeatured ? 'project-card-new--featured' : ''}`}
       variants={cardVariants}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+      layout
       whileHover={{ y: -8 }}
       transition={{ duration: 0.3 }}
       onClick={onClick}
@@ -215,8 +238,10 @@ function Projects() {
     return getProjectCategory(project) === activeFilter;
   });
 
-  // Separate featured from others
-  const otherProjects = filteredProjects.filter(p => p !== featuredProject);
+  // For grid display, exclude featured project when showing "all"
+  const gridProjects = activeFilter === 'all'
+    ? filteredProjects.filter(p => p !== featuredProject)
+    : filteredProjects;
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -288,10 +313,10 @@ function Projects() {
           className="projects__grid"
           variants={containerVariants}
         >
-          <AnimatePresence mode="wait">
-            {(activeFilter === 'all' ? otherProjects : filteredProjects).map((project, index) => (
+          <AnimatePresence initial={false}>
+            {gridProjects.map((project, index) => (
               <ProjectCard
-                key={project.name}
+                key={`${activeFilter}-${project.name}`}
                 project={project}
                 onClick={() => setSelectedProject(project)}
               />

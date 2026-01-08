@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 import { FaLinkedinIn, FaMediumM, FaGithub } from 'react-icons/fa';
-import { HiMail, HiDownload, HiChevronDown } from 'react-icons/hi';
+import { HiMail, HiDownload } from 'react-icons/hi';
 import { basics } from '../data/resume';
 
 function Hero() {
@@ -180,17 +180,6 @@ function Hero() {
             <span className="hero__location-dot" />
             <span>{basics.location}, India</span>
           </motion.div>
-        </motion.div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          className="hero__scroll-indicator"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 1 }}
-        >
-          <span>Scroll to explore</span>
-          <HiChevronDown className="hero__scroll-icon" />
         </motion.div>
       </div>
     </section>
