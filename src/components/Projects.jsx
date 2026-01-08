@@ -42,23 +42,23 @@ function ProjectCard({ project, onClick, isFeatured = false }) {
   const cardVariants = {
     hidden: {
       opacity: 0,
-      y: 30,
-      scale: 0.95
+      y: 20,
+      scale: 0.97
     },
     visible: {
       opacity: 1,
       y: 0,
       scale: 1,
       transition: {
-        duration: 0.4,
+        duration: 0.3,
         ease: [0.25, 0.46, 0.45, 0.94]
       }
     },
     exit: {
       opacity: 0,
-      scale: 0.95,
+      scale: 0.97,
       transition: {
-        duration: 0.2
+        duration: 0.15
       }
     }
   };
@@ -70,7 +70,6 @@ function ProjectCard({ project, onClick, isFeatured = false }) {
       initial="hidden"
       animate="visible"
       exit="exit"
-      layout
       whileHover={{ y: -8 }}
       transition={{ duration: 0.3 }}
       onClick={onClick}
@@ -295,28 +294,33 @@ function Projects() {
         </motion.div>
 
         {/* Featured Project */}
-        {activeFilter === 'all' && featuredProject && (
-          <motion.div
-            className="projects__featured"
-            variants={headerVariants}
-          >
-            <ProjectCard
-              project={featuredProject}
-              onClick={() => setSelectedProject(featuredProject)}
-              isFeatured={true}
-            />
-          </motion.div>
-        )}
+        <AnimatePresence mode="wait">
+          {activeFilter === 'all' && featuredProject && (
+            <motion.div
+              className="projects__featured"
+              variants={headerVariants}
+              initial="hidden"
+              animate="visible"
+              exit={{ opacity: 0, height: 0, transition: { duration: 0.3 } }}
+            >
+              <ProjectCard
+                project={featuredProject}
+                onClick={() => setSelectedProject(featuredProject)}
+                isFeatured={true}
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* Projects Grid */}
         <motion.div
           className="projects__grid"
           variants={containerVariants}
         >
-          <AnimatePresence initial={false}>
+          <AnimatePresence mode="popLayout">
             {gridProjects.map((project, index) => (
               <ProjectCard
-                key={`${activeFilter}-${project.name}`}
+                key={project.name}
                 project={project}
                 onClick={() => setSelectedProject(project)}
               />

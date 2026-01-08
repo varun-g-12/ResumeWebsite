@@ -1533,7 +1533,7 @@
 .projects__container {
   display: flex;
   flex-direction: column;
-  gap: var(--space-10);
+  gap: var(--space-6);
 }
 
 /* Header */
@@ -1621,7 +1621,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: var(--space-6);
-  min-height: 200px;
   position: relative;
 }
 
