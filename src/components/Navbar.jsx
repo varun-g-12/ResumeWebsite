@@ -112,7 +112,7 @@ function Navbar() {
 
           {/* CTA Button */}
           <a
-            href="/resume.pdf"
+            href={import.meta.env.BASE_URL + "resume.pdf"}
             download="Varun-G-Resume.pdf"
             className="navbar__cta"
             target="_blank"
@@ -175,7 +175,7 @@ function Navbar() {
 
               {/* Mobile CTA */}
               <motion.a
-                href="/resume.pdf"
+                href={import.meta.env.BASE_URL + "resume.pdf"}
                 download
                 className="navbar__mobile-cta"
                 initial={{ opacity: 0, y: 20 }}

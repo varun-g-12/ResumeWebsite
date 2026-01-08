@@ -118,7 +118,7 @@ function Hero() {
               <span>View Projects</span>
             </button>
             <a
-              href="/resume.pdf"
+              href={import.meta.env.BASE_URL + "resume.pdf"}
               download="Varun-G-Resume.pdf"
               className="hero__cta hero__cta--secondary"
             >
